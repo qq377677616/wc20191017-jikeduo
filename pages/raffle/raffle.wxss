@@ -1,0 +1,277 @@
+/* pages/disk/disk.wxss */
+.body {
+  width: 100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.prize_box{width:600rpx;height: 600rpx;border-radius: 50%;border: 8rpx solid #274C28;position: relative;}
+.prize_box .ul{width:616rpx;height: 616rpx;margin:-6rpx 0 0 -6rpx;transition: all 6s ease-in-out;}
+.prize_box .ul .li{width:300rpx;border-top:1rpx solid #666;position: absolute;left:50%;top:50%;transform-origin: left top;text-align: center;}
+.prize_box .ul .li text{display: block;margin-top: 36rpx;}
+.prize_box .needle{width:220rpx;height:10rpx;background: #00B26A;position: absolute;left:calc(50% + 2rpx);top:calc(50% - 5rpx);transform-origin: left center;transform: rotate(-90deg);}
+.prize_box .needle::after{content:"";display: block;width:0;height:0;border: 20rpx solid transparent;border-top-color:#00B26A;position: absolute;left:100%;top:calc(50% - 20rpx);transform: rotate(-90deg);}
+.prize_box .needle::before{content:"";display: block;width:20rpx;height:20rpx;border-radius: 50%;background: #00B26A;position: absolute;left:-10rpx;top:calc(50% - 10rpx);}
+.start{width:200rpx;height: 80rpx;line-height: 80rpx;text-align: center;background: #00B26A;color:#fff;border-radius: 10rpx;margin: 50rpx  auto 0;}
+.start.on{background: #B92722;border-color:#B92722;}
+.prizeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top:20rpx;
+}
+.tit_box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.tit_text {
+  line-height:1.5;
+  font-size:30rpx;
+}
+.modal_box {
+  width: 100%;
+  height:100%;
+  top:0;
+  position: fixed;
+  background: rgba(0,0,0,.5);
+  z-index:999;
+}
+.modal_content {
+  /* background: #fff; */
+  /* margin:75rpx 75rpx 0; */
+  padding:0 0 50rpx;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height:920rpx;
+}
+.modal_content > view {
+  margin:0 75rpx;
+}
+.section {
+  background: #fff;
+}
+
+.form_box .section {
+  border:1rpx solid #ddd;
+  margin-bottom:15rpx;
+  font-size:24rpx;
+  padding:10rpx 15rpx;
+  border-radius:10rpx;
+}
+.prize_info {
+  padding:75rpx 75prx 50rpx;
+}
+.form_box {
+  margin-top:10rpx !important;
+  position: relative;
+  z-index:99;
+}
+
+.prize_info > view {
+  text-align: center;
+  font-size:24rpx;
+  line-height:1.5;
+  color:#999;
+  display: flex;
+  justify-content: center
+}
+.prize_info > view text {
+  color:#ff9800;
+  transform: scale(0.95);
+  transform-origin: center;
+  display: inline-block;
+}
+.prize_info .prize_get {
+  align-items: center;
+}
+.prize_info .prize_notice {
+  font-size:40rpx;
+  color:#000;
+}
+.prize_img_box {
+  margin:20rpx 75rpx 0;
+  height:150rpx;
+}
+.prize_image {
+  width: 150rpx;
+  height:150rpx;
+}
+.submit_form {
+  padding:10rpx 50rpx;
+  display: inline-block;
+  line-height:1.5;
+  background: #fff;
+  font-size:30rpx;
+}
+.submit_box {
+  display: flex;
+  justify-content: center;
+  height:120rpx;
+  transform: scale(0.95);
+}
+.submit_box image {
+  max-width:100%;
+  height:120rpx;
+}
+.clear_icon {
+  align-self: center;
+  margin-right:10rpx;
+  margin-top:15rpx;
+  cursor: pointer;
+  position: absolute;
+  bottom:-100rpx;
+  color:#fff;
+}
+.text_area {
+  width: 100%;
+}
+.prize_box_m {
+  width: 670rpx;
+  height:670rpx;
+  position: relative;
+  z-index: 999;
+}
+.prize_box_m image {
+  width: 100%;
+  height:100%;
+}
+.prize_box_m .start_raffle {
+  position: absolute;
+  width: 160rpx;
+  height:180rpx;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
+.prize_box_m .prize_bg {
+  transition: all 6s ease-in-out;
+}
+.prizeBox .btn_share {
+  width: 360rpx;
+  height:100rpx;
+}
+.count_box {
+  margin:0rpx 0;
+  z-index:99;
+  position: relative;
+  display:flex;
+  align-items: center;
+}
+.count_title {
+  color:#fff;
+}
+.count_val {
+  color:#FDD062;
+  font-size: 120%;
+  font-family: 'Microsoft YaHei'
+}
+.raffle_bg {
+  position: absolute;
+  top:0;
+  left:0;
+  height:100%;
+  width: 100%;
+}
+.share {
+  z-index:99;
+  margin-top:10rpx;
+  margin-bottom:10rpx;
+  padding:0;
+  background: transparent !important;
+}
+.modal_bg {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  margin:0 !important;
+}
+
+.modal_bg >view {
+  z-index:99;
+  margin:0 155rpx;
+}
+.prize_info {
+  margin-top:320rpx !important;
+  z-index:999 !important;
+  position: relative;
+}
+.modal_bg_info {
+  width: 100%;
+  height:100%;
+  position: absolute;
+}
+.prize_thing {
+  color:red;
+  font-size:28rpx;
+}
+.del {
+  width: 81rpx;
+  height:81rpx;
+  align-self: center;
+  cursor: pointer;
+  position: absolute;
+  bottom:-100rpx;
+  color:#fff;
+}
+.chance_title {
+  height:95rpx;
+  z-index:99;
+  width: 30%;
+}
+.chance_title {
+  width: 380rpx;
+  height:160rpx;
+}
+.chance_count {
+  height:30rpx;
+  z-index:99;
+  width: 100%;
+}
+.prize_box_wrapper {
+  /* position: absolute;
+  top:0;
+  left:0;
+  width: 100%; */
+  padding-top:45rpx;
+}
+.wrapper_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.chance_count {
+  margin-top:10rpx;
+}
+.share_box {
+  /* position: absolute;
+  bottom:45rpx; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.prize_box_shadow {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index:59;
+    top:-30rpx;
+}
+.prize_box_shadow image {
+  width: 380rpx;
+  height:60rpx;
+
+
+}
+.content {
+  width: 750rpx;
+  height:1206rpx;
+}
+/* .prize_box_main {
+  position: absolute;
+  bottom:25%;
+} */

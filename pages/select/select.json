@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "controls": "/components/audiocontrols/controls"
+  }
+}

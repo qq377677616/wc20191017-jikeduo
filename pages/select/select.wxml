@@ -1,0 +1,49 @@
+<view class='select-box'>
+  <controls class='video' isPause="{{isPause}}" isMain="{{false}}" isMan='{{sex == 1}}'></controls>
+
+        <view class='img_bg'  wx:for="{{topicList}}" wx:for-item="item" wx:key='index' wx:for-index="index" hidden="{{index != topicNum}}">
+          <image src='{{item.content[0].background}}'></image>
+        </view>
+  <view class='select-area' wx:for="{{topicList}}" wx:for-item="item" wx:key='index' wx:for-index="index" wx:if="{{index == topicNum}}">
+      <!-- <view class='img-head' wx:if='{{sex == 0}}'>
+        <image class='to' src='../../assets/images/icons/123.jpg' mode='widthFix'> </image>
+      </view>
+      <view class='img-head' wx:else>
+        <image class='to' src='../../assets/images/icons/234.jpeg' mode='widthFix'> </image>
+      </view> -->
+
+
+      <view class='title-box'>
+           <!-- <view class='title-main'>
+              <view class='title_box'>
+                 <text class="{{sex == 0 ? 'topic_male' : 'topic_female'}}">{{item.name}}</text>  
+              </view>         
+          </view> -->
+           <view class='title-main'>
+                 <text class="{{sex == 1 ? 'topic_male' : 'topic_female'}}">{{item.name}}</text>      
+          </view>
+             <view class='select-type'>
+                <view wx:for='{{item.content}}' wx:for-item="person" wx:key='personIndex'  wx:for-index="personIndex" data-title="{{activeIndex}}" data-tit="{{personIndex}}" catchtap='nextStageBefore' data-audio='{{person.audio}}' data-parent-index="{{index}}" data-index='{{personIndex}}' data-id="{{person.id}}" class="{{ person.checked ? 'active':'' }}">
+                    <text class="tit_sex {{sex == 1 ? 'tit_male' : 'tit_female'}}">{{list[personIndex]}}.</text> <text> {{ person.content }}</text>
+
+
+
+          <audio src='{{person.audio}}' id='point{{index}}_{{personIndex}}' hidden='true'></audio>
+          
+                </view>
+            </view>
+
+            <view class='btn_sure_box'>
+                <image class='btn_next' catchtap="sureSubmit" src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/btn_male.png' wx:if="{{sex == 1}}"></image>
+                <image  class='btn_next' catchtap="sureSubmit"src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/btn_female.png' wx:if="{{sex == 0}}"></image>
+                </view>
+          <!-- <view>
+
+          </view> -->
+                <audio src='' id='point' hidden='true'></audio>
+          <!-- <view class='submit-box'>
+            <button class='btn-submit' catchtap='nextStage'>确定</button>  
+          </view> -->
+      </view>
+  </view>
+</view>

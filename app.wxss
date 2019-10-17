@@ -1,0 +1,40 @@
+/**app.wxss**/
+page {
+  height:100%;
+}
+button::after{border:none;}
+@font-face{
+            font-family:myFont;
+            src:url('http://game.flyh5.cn/resources/game/wechat/dxl/jkd/main.TTF');
+        }
+        page {
+          font-family: myFont;
+        }
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.img_bg {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  background-origin: center center;
+  background-position: center cetner;
+  top:0;
+  left:0;
+}
+.img_bg image {
+  width: 100%;
+  height:100%;
+}
+image {
+  display: block;
+}
+.title-main text {
+  font-family: myFont !important;
+}

@@ -1,0 +1,126 @@
+<!-- 
+<view class='page_box page_6'>
+          <view class='page_img'>
+              <image class='bg_img' catchlongtap="saveLong" src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/role/6/page6_1.png'></image>
+                            <view class='nick_box'>
+                  <text class='nick_name'>{{userInfo.nickName}}</text>
+                  <image class='title_img' src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/role/1/page1_10.png'></image>
+              </view>
+              <image class='lazy_title' src='{{resultObj.topList[0].url}}'></image>
+              <image class='after_lazy' src='{{resultObj.topList[1].url}}'></image>
+              <view class='scripts scripts1'>
+                  {{resultObj.labelList[0].name}}
+              </view>
+              <view class='scripts scripts2'>
+                  {{resultObj.labelList[1].name}}
+              </view>
+              <view class='scripts scripts3'>
+                  {{resultObj.labelList[2].name}}
+              </view>
+              <view class='scripts scripts4'>
+                  {{resultObj.labelList[3].name}}
+              </view>
+              <view class='scripts scripts5'>
+                  {{resultObj.labelList[4].name}}
+              </view>
+              <view class='scripts scripts6'>
+                  {{resultObj.labelList[5].name}}
+              </view>
+          </view>
+          <view class='descripts'>
+               <text wx:for='{{resultObj.scriptList}}' wx:for-item="scriptItem" wx:for-index="scriptIndex">{{scriptItem}}</text>
+          </view>
+            <view class='btn_box'>
+                <button catchtap='again' class='again'>
+                    <image src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/again.png'></image>
+                </button>
+
+                <button catchtap='toGetPrize' class='prize'>
+                    <image src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/get_gift.png'></image>
+                </button>
+              </view>
+</view>  -->
+
+
+<!-- <view wx:for="{{urlObj}}" wx:for-item="urlItem" wx:for-index="ulrIndex">
+  <image src="{{urlItem.bgUrl}}"></image>
+  <image src="{{urlItem.pageUrl}}"></image>
+  <image src="{{urlItem.nickUrl}}"></image>
+  <view wx:for="{{urlItem.labelList}}" wx:for-item="labelItem" wx:for-index="labelIndex">
+      <image src="{{labelItem.url}}"></image>
+  </view>
+  <view wx:for="{{urlItem.label}}" wx:for-item="labItem" wx:for-index="labIndex">
+      <image src="{{labItem.url}}"></image>
+  </view>
+</view> -->
+
+
+
+<view class='loading' wx:if='{{!isLoad}}'>
+
+</view>
+
+<view class='main' wx:if="{{isLoad}}">
+
+
+<view class="page_box page_{{pageIndex+1}} {{height > 700 ? 'phone_x' : ''}}" wx:if="{{num == (pageIndex + 1)}}" wx:for="{{urlObj}}" wx:for-item="pageItem" wx:for-index="pageIndex">
+  <view class='page_img' style="background:url({{resultObj.bgUrl}});background-repeat:no-repeat;background-size:cover;background-position:center center;">
+   
+    <view class='img_box'>
+      
+        <!-- <image class='person' src="{{pageItem.personUrl}}"></image> -->
+      <!-- <view class='long_title' style="background:transparent">
+          长按保存图片>>>
+      </view> -->
+      <view class='tag_title' wx:if="{{!isTrue}}">微信搜索小程序 xxx 了解你的教练属性</view>
+      <view class='img_box_wrapper'>
+        <image class='bg_img' wx:if="{{!isTrue}}" src='{{resultObj.figure}}'></image>
+        <image class='bg_img' src='{{resultObj.pageUrl}}' wx:else></image>
+        <view class='nick_box'>
+        <text class='nick_name'>{{userInfo == '' ? '你' : userInfo.nickName}}</text>
+          <!-- <text class='nick_name'>{{userInfo == '' ? '你' : userInfo.nickName }}</text> -->
+          <image class='title_img' src='{{pageItem.nickUrl}}'></image>
+        </view>
+        <image class='lazy_title' src='{{resultObj.topList[0].url}}'></image>
+        <image class="after_lazy {{resultObj.topList[1].name == '完美主义晚期' ? 'other' : ''}}" src='{{resultObj.topList[1].url}}'></image>
+        <image class="scripts scripts{{laberIndex + 1}}" src="{{labelItem.url}}" wx:for="{{resultObj.labelList}}" wx:for-item="labelItem" wx:for-index="laberIndex"></image>
+        <image class='codeImg' wx:if="{{!isTrue}}" src="{{codeUrl}}"></image>
+        <view class='descripts'>
+          <text>{{resultObj.scripts}}</text>
+        </view>
+
+
+        <view class='btn_box'>
+          <button catchtap='again' class='again'>
+            <image src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/again.png'></image>
+          </button>
+          <button catchtap='again' class='again' catchtap="saveLong">
+            <image src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/save_post.png'></image>
+          </button>
+          <button catchtap='toGetPrize' class='prize'>
+            <image src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/get_gift.png'></image>
+          </button>
+        </view>
+
+      </view>
+    </view>
+  </view>
+</view>
+
+</view>
+
+
+
+
+<view>
+  <view class="canvas-mask flex-cen" wx:if="{{photoModal}}" catchtap="hideModal">
+    <view class="content riseShow">
+      <image class="myCanvas" mode="widthFix" src="{{ posterImgUrl }}"></image>
+      <!-- <view class="flex-aro">
+           <view class="btn" bindtap="savePhoto">保存到手机相册</view>
+         </view> -->
+    </view>
+  </view>
+  <canvas canvas-id="myCanvas" id="myCanvas"></canvas>
+  <showModal showModalOption="{{showModalOption}}" bindoperation="operation"></showModal>
+</view>

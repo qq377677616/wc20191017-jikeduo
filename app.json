@@ -1,0 +1,21 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/raffle/raffle",
+    "pages/label/label",
+    "pages/select/select",
+    "pages/main/main",
+    "components/bgAudio/bgAudio",
+    "components/getAuth/getAuth"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "测一测你是哪种教练",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "requiredBackgroundModes": [
+    "audio"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "showModal": "/components/showModal/showModal",
+    "getAuth" : "/components/getAuth/getAuth",
+    "getPhoneNumber": "/components/getPhoneNumber/getPhoneNumber"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "getPhoneNumber": "/components/getPhoneNumber/getPhoneNumber",
+    "bgAudio" : "/components/bgAudio/bgAudio",
+    "controls": "/components/audiocontrols/controls"
+  }
+}

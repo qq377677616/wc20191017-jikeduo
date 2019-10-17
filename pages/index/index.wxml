@@ -1,0 +1,39 @@
+<!--pages/main/main.wxml-->
+<view class='page_box'>
+  <view class='page_img'>
+    <image src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/main.png' mode='widthFix'></image>
+  </view>
+
+  <bgAudio class='bg_music' image='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/bg_male.png' audio='{{imageOption.audio}}' play="{{imageOption.play}}"></bgAudio>
+
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='start_img' wx:if="{{!isTrue}}">
+    <image src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/start.png'></image>
+  </button>
+
+  <button type="button" catchtap="getUserInfo" class='start_img' wx:else>
+    <image src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/start.png'></image>
+  </button>
+
+
+  <showModal container="{{showModal}}" bindoperation="operation"></showModal>
+
+  <view class='sex_page_box'>
+
+    <view catchtap="changeSex" data-sex='0' class="female {{sex == 0 ? 'z_index' : ''}}">
+      <image class="female_img {{sex == 0 ? 'z_index' : ''}}" src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/female.png'></image>
+      <image class="female_img {{sex != 0 ? 'z_index' : ''}}" src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/un_female.png'></image>
+    </view>
+
+    <view catchtap="changeSex" data-sex='1' class="male {{sex == 1 ? 'z_index' : ''}}">
+      <image class="male_img {{sex == 1 ? 'z_index' : ''}}" src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/male.png'></image>
+      <image class="male_img {{sex != 1 ? 'z_index' : ''}}" src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/un_male.png'></image>
+      <!-- <image class='dialog_click' src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/click.png'></image> -->
+    </view>
+    <view class='dialog_click'>
+      <image class='dialog_click' src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/click.png'></image>
+    </view>
+  </view>
+  <getPhoneNumber bindgetPhoneNumber="getPhoneNumber" wx:if="{{isGetPhoneNumber}}"></getPhoneNumber>
+
+  <controls class='video' isPause="{{isPause}}" isMain="{{true}}" isMan='{{sex == 1}}'></controls>
+</view>

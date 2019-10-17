@@ -1,0 +1,6 @@
+<!--components/audio/audio.wxml-->
+
+<view class='bgmView' catchtap='BGM'>
+  <image wx:if='{{bgm}}' class='bgmImg {{bgmImgAni}}' src='/images/kaishi.png'></image>
+  <image wx:else class='bgmImg' src='/images/zanting.png'></image>
+</view>

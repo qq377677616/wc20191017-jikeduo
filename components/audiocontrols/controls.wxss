@@ -1,0 +1,20 @@
+/* pages/audiocontrols/controls.wxss */
+.btn{width:80rpx;height:80rpx;position: fixed;left:42rpx;top:51rpx;z-index: 1000;}
+.btn image{width:100%;height:100%;}
+.rotate {
+  animation: rotate 3s infinite linear;
+}
+.no-main {
+  left:initial;
+  right:15rpx;
+  top:20rpx;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+    transition-delay: 1s;
+  }to {
+    transform: rotate(360deg);
+    transition-delay: 1s;
+  }
+}

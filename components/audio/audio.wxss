@@ -1,0 +1,23 @@
+/* 背景音乐  */
+
+.bgmView {
+  position: fixed;
+  top: 20rpx;
+  right: 20rpx;
+  z-index: 99;
+}
+
+.bgmImg {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.bgmImgAni {
+  animation: jumpball 4s infinite linear;
+}
+
+@keyframes jumpball {
+  100% {
+    transform: rotate(360deg);
+  }
+}

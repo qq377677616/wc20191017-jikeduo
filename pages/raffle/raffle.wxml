@@ -1,0 +1,91 @@
+<!--pages/disk/disk.wxml-->
+<view class="body flex-cen-col">
+
+  <image class='raffle_bg' src="http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/raffle_bg.png"></image>
+
+
+  <view class="content">
+    <view class='prize_box_wrapper'>
+      <view class='wrapper_content'>
+        <image class='chance_title' src='http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/chance_title.png'></image>
+      </view>
+
+    </view>
+
+    <view class="prizeBox">
+      <view class='prize_box_main'>
+        <view class='prize_box_m'>
+          <image class='prize_bg' src="http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/raffle.png" style='transform:rotate({{needleDeg}}deg)'>
+          </image>
+          <image class='start_raffle' bindtap="start" src='http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/start_raffle.png'></image>
+        </view>
+
+        <view class='prize_box_shadow'>
+          <image class='prize_shadow' src="http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/shadow.png"></image>
+        </view>
+      </view>
+
+
+      <view class="prize_box" wx:if='{{false}}'>
+        <view class="ul" style='transform:rotate({{needleDeg}}deg)'>
+          <view class="li {{curIndex == index ? 'cur' : ''}}" wx:for="{{prize}}" wx:key="{{item.id}}" style='transform:rotate({{-item.deg}}deg)'>
+            <text style='transform:rotate({{curNumDeg * .5}}deg)'>{{item.name}}</text>
+          </view>
+        </view>
+        <view class="needle"></view>
+      </view>
+      <!-- <view class="start {{isPrize ? '' : 'on'}}]" bindtap="start"><text wx:if="{{isPrize}}">开始</text><text wx:if="{{!isPrize}}">抽奖中...</text></view>  -->
+      <view class='share_box'>
+        <view class='count_box'>
+          <text class='count_title'>剩余抽奖次数：</text>
+          <text class='count_val'>{{count}} / 2</text>
+        </view>
+        <button open-type="share" class="share">
+          <image class='btn_share' src="http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/share.png" bindtap="share"></image>
+        </button>
+                <image class='chance_count' src='http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/chance_count.png'></image>
+      </view>
+
+      <!-- <view class="btn_share" bindtap="share"><text>分享</text></view>  -->
+    </view>
+  </view>
+
+
+
+  <view class='modal_box' wx:if='{{showModal}}'>
+    <view class='modal_content'>
+      <view class='modal_bg' wx:if='{{getPrize}}'>
+        <image class='modal_bg_info' src='http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/get.png'></image>
+        <view class='prize_info'>
+          <view class='prize_img_box'>
+            <image class='prize_image' src='{{url}}'></image>
+          </view>
+          <view class='prize_get'>获得了
+            <text class='prize_thing'>{{prizeName}}</text> 1个</view>
+        </view>
+        <view class='form_box'>
+          <view class="section">
+            <input placeholder="请输入联系人姓名" bindinput="changeName" value="{{addressInfo.name}}" auto-focus/>
+          </view>
+          <view class="section">
+            <input placeholder="请输入手机号" bindinput="changePhone" value="{{addressInfo.phone}}" />
+          </view>
+          <view class="section">
+            <input class='text_area' bindinput="changeArea" placeholder="请输入地址" value="{{addressInfo.address}}" />
+            <!-- <textarea class='text_area' auto-height placeholder="请输入地址" /> -->
+          </view>
+          <view class='submit_box' catchtap="saveAddress">
+            <image src='http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/address_submit.png'></image>
+            <!-- <button class='submit_form'>提交</button> -->
+          </view>
+
+        </view>
+      </view>
+      <view class='modal_bg' wx:else>
+        <image class='modal_bg_info' src='http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/unget.png'></image>
+      </view>
+      <image class='del' catchtap='hideModal' src='http://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/delete.png' mode='widthFix'></image>
+      <!-- <icon class='clear_icon' type="clear" size="25" catchtap='hideModal' /> -->
+    </view>
+  </view>
+</view>

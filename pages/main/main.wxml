@@ -1,0 +1,22 @@
+<!--index.wxml-->
+
+<view class='main-box'>
+        <!-- <view class='main-img'>
+          <image class='to main-img1' src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/game/game_7.png' mode='widthFix'> 
+          </image>
+
+        </view>
+        
+      <view class='main-img'>
+        <image class='to  main-img2' src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/game/game_16.png' mode='widthFix'> </image>
+      </view>
+      
+      <view class='main-img'>
+        <image class='to main-img3' src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/game/game_19.png' mode='widthFix'> </image>
+      </view>
+      
+      <view class='main-img'>
+        <image class='to main-img3' src='https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/game/game_22.png' mode='widthFix'> </image>
+      </view> -->
+      <image class="bg_image {{showNum == imgIndex ? 'show' : ''}}" src="{{imgItem.url}}" wx:for='{{imgList}}' wx:for-item='imgItem' wx:for-index='imgIndex' wx:key="imgIndex"></image>
+</view>

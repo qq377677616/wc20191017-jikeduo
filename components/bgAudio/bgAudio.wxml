@@ -1,0 +1,7 @@
+<!--components/bg_audio/bg_audio.wxml-->
+
+<view class="audio_box {{play ? 'play' : ''}}" catchtap="clickPlay">
+  <image src="{{image}}"></image>
+  <audio src='{{audio}}' id='bgMusic' hidden='true' autoplay='true' loop='true'></audio>
+</view>
+

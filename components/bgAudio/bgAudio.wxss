@@ -1,0 +1,25 @@
+/* components/bg_audio/bg_audio.wxss */
+.audio_box {
+  width: 75rpx !important;
+  height:75rpx !important;
+}
+.audio_box image {
+  width: 75rpx !important;
+  height:75rpx !important;
+}
+.play {
+		animation:box_rotate 2s linear infinite;
+}
+@keyframes box_rotate {
+  
+    0%{transform:rotate(0deg);-webkit-transform:rotate(0deg);}
+ 
+		25%{ transform:rotate(90deg);-webkit-transform:rotate(90deg);}
+ 
+		50%{ transform:rotate(180deg);-webkit-transform:rotate(180deg);}
+ 
+		75%{ transform:rotate(270deg);-webkit-transform:rotate(270deg);}
+ 
+		100%{ transform:rotate(360deg);-webkit-transform:rotate(360deg);}
+
+}

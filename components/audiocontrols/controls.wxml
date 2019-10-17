@@ -1,0 +1,6 @@
+<!--pages/audiocontrols/controls.wxml-->
+<view id='btn' class="btn [{{!isPause ? 'rotate' : ''}},{{!isMain ? 'no-main' : ''}}]" bindtap='controls'>
+  <image src="https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/bg_male.png" wx:if="{{isMan}}"></image>
+  <image src="https://game.flyh5.cn/resources/game/wechat/dxl/jkd/images/bg_female.png" wx:else></image>
+  <!-- <image src="/images/m_s.png" hidden="{{!isPause}}"></image> -->
+</view>

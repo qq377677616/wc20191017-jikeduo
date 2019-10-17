@@ -1,0 +1,132 @@
+/* pages/main/main.wxss */
+page {
+  height:100%;
+  padding : 0;
+  margin:0;
+}
+.start_img {
+  width: 350rpx;
+  height:100rpx;
+  display: inline-block;
+  position: absolute;
+  z-index: 9999;
+  bottom:140rpx;
+  left:50%;
+  transform: translateX(-50%);
+  background: transparent;
+  border: none !important;
+  box-sizing: initial;
+}
+.page_box {
+  height:100%;
+}
+.page_box image {
+  height:100% !important;
+  display: block;
+}
+.start_img image {
+  width: 100%;
+  height:100%;
+}
+.page_img {
+  position: absolute;
+  width: 100%;
+  height:100%;
+  overflow:hidden;
+}
+.page_img image {
+  width: 100%;
+  height:100%;
+  display: block;
+}
+.page_box image {
+  width: 100% ;
+  height:100%;
+}
+.bg_music {
+  position: absolute;
+  z-index:99;
+  display: inline-block;
+  left:50rpx;
+  top:50rpx;
+}
+.sex_page_box {
+  position: absolute;
+  top:0;
+  left:0;
+  padding-top:325rpx;
+  box-sizing:border-box;
+  height:100%;
+  width: 100%;
+  display: flex;
+}
+.sex_page_box > view:nth-child(1) {
+  width: 421rpx;
+}
+.sex_page_box > view:nth-child(2) {
+  width: 463rpx;
+}
+.sex_page_box > view image {
+  max-height:100% !important;
+}
+.female {
+  position: absolute;
+  left:0;
+  bottom:0;
+  z-index:109;
+  height:826rpx;
+}
+.male {
+  position: absolute;
+  right:0;
+  bottom:0;
+  z-index:110;
+  height:916rpx;
+}
+.z_index {
+  z-index:999 !important;
+}
+.female image {
+  position: absolute;
+  top:0;
+  left:0;
+}
+.male image {
+  position: absolute;
+  top:0;
+  right:0;
+}
+.page_box .dialog_click {
+  animation: dialog_click 1.5s infinite linear;
+  position: absolute;
+  display: inline-block;
+  top:50%;
+  left:50%;
+  transform: translateX(-50%,-50%);
+  width: 120rpx !important;
+  height: 120rpx !important;
+  max-height: 120rpx !important;
+  z-index: 9999;
+}
+@keyframes dialog_click {
+  0% {
+    transform: translate(-100rpx,0rpx);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(0rpx,0rpx);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(30rpx,0rpx);
+    opacity: 1;
+  } 
+  75% {
+    transform: translate(0rpx,0rpx);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-100rpx,0rpx);
+    opacity: 1;
+  }
+}
